@@ -1,0 +1,43 @@
+.menu {
+  &--color-white {
+    color: #fff;
+  }
+}
+
+.menu__list {
+  display: flex;
+  justify-content: center;
+}
+
+.menu__item:not(:last-child) {
+  
+  margin-right: 8%;
+
+  
+}
+
+.menu__link {
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 26px;
+  
+
+
+  &:hover{
+  color:$violet-color;
+  transition: color 0.3s;
+  border-bottom: 2px solid $violet-color;
+  }
+
+  &:active {
+  color: grey;
+  }
+
+  &:focus {
+  color: grey;
+  border-bottom: 2px solid transparent;
+  }
+
+
+}
