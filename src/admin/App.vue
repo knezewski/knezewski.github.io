@@ -2,7 +2,6 @@
   .root-wrapper-container
     .root-container
        header.header-container 
-       
        section.tabs-container 
        main.content-container
     .tooltips-container   
@@ -17,7 +16,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 
 
-.root-wrapper-container {
+/* .root-wrapper-container {
   height: 100%;
 }
 
@@ -79,6 +78,14 @@
 
 button {
   background: transparent;
-}
+} */
 
+.root-wrapper-container {
+  height: 100%;
+
+    display: grid;
+    grid-template-rows:  repeat(5, 1fr) ;
+    grid-template-columns:  repeat(5, 1fr);
+    grid-gap: 2vw;
+}
 </style>
