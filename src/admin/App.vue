@@ -1,12 +1,39 @@
 <template lang="pug">
-  .root-wrapper-container
-    .root-container
-       header.header-container 
-       section.tabs-container 
-       main.content-container
-    .tooltips-container   
-</template>
+  div.root-wrapper-container
+    div.root-container
+      template(v-if="$route.meta.public")
+        router-view
 
+      template(v-else-if="userIsLogged")
+        header.header-container
+          app-header
+        section.tabs-container
+          tabs
+        main.content-container
+          router-view(:pageTitle="$route.meta.title")
+    .tooltips-container(:class="{'showed' : showed}")
+        tooltip(type="error")
+  </template>
+
+<script>
+import { mapState, mapActions, mapGetters } from "vuex";
+export default {
+  components: {
+    appHeader: () => import("components/header"),
+    tabs: () => import("components/tabs"),
+    tooltip: () => import("components/tooltip")
+  },
+  computed: {
+    ...mapState("tooltips", {
+      showed: state => state.showed
+    }),
+    ...mapGetters("user",["userIsLogged"])
+  },
+  methods: {
+    ...mapActions("tooltip",["closeTooltip"])
+  },
+};
+</script>
 
 
 <style lang="pcss">
@@ -16,14 +43,15 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 
 
-/* .root-wrapper-container {
+
+.root-wrapper-container {
   height: 100%;
 }
 
 .header-container {
   background: linear-gradient(to right, #3e3e59, #454573);
   padding: 15px 0;
-
+  
   @include phones {
     padding: 20px 0;
   }
@@ -77,15 +105,8 @@
 }
 
 button {
-  background: transparent;
-} */
-
-.root-wrapper-container {
-  height: 100%;
-
-    display: grid;
-    grid-template-rows:  repeat(5, 1fr) ;
-    grid-template-columns:  repeat(5, 1fr);
-    grid-gap: 2vw;
+  background-color: transparent;
 }
+
+
 </style>
