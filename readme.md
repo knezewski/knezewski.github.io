@@ -36,7 +36,6 @@ $ yarn имя_скрипта
 ```
 | Скрипт | Назначение |
 | ------ | ------ |
-
 | Ссылка на репозиторий  | https://github.com/knezewski/ls-advanced-portfolio.git|
 | Ссылка на рабочий сайт | https://knezewski.github.io/docs/index.html |
 
