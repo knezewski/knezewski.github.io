@@ -36,7 +36,7 @@ $ yarn имя_скрипта
 ```
 | Скрипт | Назначение |
 | ------ | ------ |
-| Номер домашнего задания| ДЗ 1 и ДЗ 2| 
+
 | Ссылка на репозиторий  | https://github.com/knezewski/ls-advanced-portfolio.git|
 | Ссылка на рабочий сайт | https://knezewski.github.io/docs/index.html |
-| Примечания | Как позиционировать thumbs и buttons внутри контейнера?  |
+
